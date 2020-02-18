@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding:0;
+    text-decoration: none;
+    list-style: none;
+}
+nav{
+    height: 80px;
+    background: #2c3e50;
+}
+nav img{
+    width: 4%;
+    position: absolute;
+    top:10px;
+    bottom: 10px;
+    left:3%;
+}
+nav h2{
+    position: absolute;
+    left: 10%;
+    top:30px;
+    color:white;
+}
+nav ul{
+    float: right;
+    margin-right: 25px;
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 15px;
+  }
+  nav ul li a{
+    position: relative;
+    padding: 5px 0;
+    color: white;
+    font-size: 18px;
+  }
+  
+.formulario {
+    display: flex;
+    justify-content: center;
+}
+div form input{
+    border: 1px solid grey;
+    width: 40%;
+    height: 5%;
+}
+div form textarea{
+    border: 1px solid grey;
+    width: 40%;
+    height: 15%;
+
+}
+  footer{
+      text-align: center;
+      width:100%;
+    height: 10%;
+      background-color: grey;
+  }
+  footer p{
+      justify-content: center;
+      color: white;
+  }
+@media screen and (min-width: 768px) and ()
