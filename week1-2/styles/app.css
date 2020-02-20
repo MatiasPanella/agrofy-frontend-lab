@@ -52,6 +52,9 @@ nav ul li a{
   color: black;
   font-size: 18px;
 }
+#img-mob{
+  display: none;
+}
 .welcome{
   height: 40vh;
   display: flex;
@@ -237,6 +240,10 @@ footer p{
     color: black;
 }
 @media (max-width: 768px) {
+  *{
+    margin: 0;
+    padding: 0;
+  }
   nav img{
     position: absolute;
     width: 10vw;
@@ -275,5 +282,143 @@ footer p{
   }
   #check:checked ~ ul{
     left: 0;
+  }
+  #img-mob{
+    display: flex;
+    margin: 0 auto;
+    width: 80vw;
+    height: 30vh;
+  }
+  .welcome{
+    background: none;
+    margin: 0;
+    padding: 0;
+    }
+  .welcome h1{
+  margin:0;
+  top: 10vh;
+  text-align: center;
+  font-size: 300%;
+}
+  .welcome p{
+    margin:0;
+    text-align: center;
+  }
+  .welcome .btn{
+    margin:0 auto;
+    justify-content: center;
+    width: 30vw;
+    height: 7vh;
+    background: rgb(255,222,155);
+    border: 1px solid black;
+   }
+   .history{
+     margin: 0;
+     padding:0;
+   }
+   .history h1{
+    background: rgba(255,189,141,1);
+    margin: 0 auto;
+    padding:2vh 0;
+   }
+   .history #art1{
+     display: block;
+     margin-left: 1vw;
+     padding:0;
+   }
+   .history #art1 .log{
+     display: flex;
+     justify-content: center;
+     padding-bottom: 5vh;
+   }
+   .history #art1 .log img{
+    margin: 0;
+    width: 30vw;
+   }
+   .history #art1 .log h2{ 
+    margin: 3vh 0 0 0;
+  }
+  .history .log2{
+    margin: 0 auto;
+    padding-top: 3vh;
+  }
+  .history #art2{
+    display: flex;
+    flex-direction: column-reverse;
+    margin-right: 1vw;
+    padding:0;
+  }
+  .history #art2 .log2 img{
+    margin: 0;
+    width: 30vw;
+   }
+   .history #art2 .log2 h2{ 
+    margin: 3vh 0 0 0;
+  }.history #art3{
+    display: block;
+    margin-left: 1vw;
+    padding:0;
+  }
+  .history #art3 .log3{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5vh;
+  }
+  .history #art3 .log3 img{
+   margin: 0;
+   width: 30vw;
+  }
+  .iframe{
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0;
+    padding:0;
+  }
+  .iframe aside{
+    margin: 0;
+    padding: 0 0 3vh 0;
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+  }
+  .iframe aside h2{
+    padding:3vh 0 3vh 0;
+    font-size: 100%;
+  }
+  .iframe aside button{
+    width: 30vw;
+    height: 5vh;
+    margin: 0 auto;
+  }
+  .iframe #player{
+    margin:0 auto;
+    width: 90vw;
+    height: 40vh;
+  }
+  .formulario{
+   width: 100vw;
+  }
+  .formulario form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .formulario h1{
+    font-size: 150%;
+    text-transform: uppercase;
+  }
+  .formulario form input{
+    width: 70vw;
+    height: 4vh;
+  }
+  .formulario form textarea{
+    width: 70vw;
+    height: 10vh;
+  }
+  .formulario form button{
+    margin: 0 auto;
+    width: 25vw;
+    height: 5vh;
+    border-radius: 20px;
   }
 }
