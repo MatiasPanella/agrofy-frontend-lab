@@ -1,0 +1,23 @@
+#titulo{
+    text-align: center;
+    padding-top: 3vh;
+    font-size: 250%;
+}
+.busqueda{
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;   
+}
+.busqueda input{
+    width: 40vw;
+    height: 5vh;
+    margin-right: 1vw;
+    border-radius: 15px;
+}
+.busqueda button{
+    width: 7vw;
+    height: 5vh;
+    background: linear-gradient(117deg, rgba(34,193,195,1) 0%, rgba(0,252,255,1) 100%);
+    border-radius: 40px;
+    border: none;
+}

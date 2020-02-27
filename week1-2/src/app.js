@@ -37,3 +37,30 @@ var tag = document.createElement('script');
       function stopVideo() {
         player.stopVideo();
       }
+
+
+      const url = 'https://pokeapi.co/api/v2/pokemon/2'
+      //for(i=1;i<=150;i++){
+      fetch(url /*+ i*/)
+      .then(res => res.json())
+      .then(data => {console.log(data)
+        const poke = document.getElementById('pokemones')
+        poke.innerHTML=`<h2>${data.name}</h2>`
+      })
+      .catch(err => console.log(err))
+    //}
+    /* for(i=1; i<=150; i++){
+      fetch('https://pokeapi.co/api/v2/pokemon/' + i)
+        .then(res => res.json())
+        .then(json => {console.log(json.results)
+          const pokemons = json.results.map(pokemon=>{
+            return {
+              name: pokemon.name,
+              id: pokemon.id,
+              image: pokemon.image,
+              type: pokemon.type
+            }
+          })
+          console.log(pokemons)
+        })
+      }*/

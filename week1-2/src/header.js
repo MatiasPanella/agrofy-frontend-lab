@@ -8,6 +8,4 @@ window.onscroll = () => {
         document.getElementById("navbar").style.boxShadow = 'none'
         document.querySelector("svg").style.display='block'
     }
-
-
 }
