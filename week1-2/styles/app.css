@@ -9,7 +9,10 @@
 nav{
   height: 10vh;
   background: rgb(255,222,155);
+  position: sticky;
+  top: 0;
 }
+
 .checkbtn{
   font-size: 30px;
   color: white;
@@ -247,6 +250,13 @@ footer p{
   *{
     margin: 0;
     padding: 0;
+  }
+  nav{
+    height: 10vh;
+    background: lightblue;
+  }
+  .svg{
+    display: none;
   }
   nav img{
     position: absolute;
