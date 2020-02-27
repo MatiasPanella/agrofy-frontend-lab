@@ -9,7 +9,10 @@
 nav{
   height: 10vh;
   background: rgb(255,222,155);
+  position: sticky;
+  top: 0;
 }
+
 .checkbtn{
   font-size: 30px;
   color: white;
@@ -71,17 +74,19 @@ nav ul li a{
 .welcome h1{
   margin-left: 66vw;
   font-size: 300%;
+  text-align: center;
 }
 .welcome p{
-  margin: 7vh 0 0 72vw;
+  margin: 7vh 0 0 68vw;
   font-size: small;
+  text-align: center;
 }
 .welcome button{
   width: 7vw;
   height: 5vh;
   background: linear-gradient(117deg, rgba(34,193,195,1) 0%, rgba(0,252,255,1) 100%);
   border-radius: 40px;
-  margin-left: 76vw;
+  margin-left: 80vw;
   transition: all 1s;
   cursor: pointer;
   border: none;
@@ -180,13 +185,15 @@ nav ul li a{
 .iframe aside{
   margin: 3vh 0 0 5vw;
   font-size: 30px;
+  text-align: center;
 }
 .iframe aside > button{
   border: none;
   border-radius: 15px;
   width: 7vw;
   height: 5vh;
-  margin: 3vh 0 0 6vw;
+  margin: 2vh auto;
+
   background: #fff;
 }
 .iframe aside > button:hover{
@@ -243,6 +250,13 @@ footer p{
   *{
     margin: 0;
     padding: 0;
+  }
+  nav{
+    height: 10vh;
+    background: lightblue;
+  }
+  .svg{
+    display: none;
   }
   nav img{
     position: absolute;
