@@ -40,7 +40,7 @@ function stopVideo() {
 
 const arrPoke= []
 const url = 'https://pokeapi.co/api/v2/pokemon/'
-for (i = 1; i <= 150; i++) {
+for (i =1 ; i <= 150; i++) {
   fetch(url + i)
     .then(res => res.json())
     .then(data => {
@@ -51,17 +51,20 @@ for (i = 1; i <= 150; i++) {
         img:data.sprites.front_default
       }
       arrPoke.push(arrayPoke)
+      
+      const divPoke=document.getElementById('pokemones')
+      const div = document.createElement('div')
+      div.classList.add("col-md-2")
       for (i=0; i<=arrPoke.length; i++){
-      document.getElementById('pokemones').append(`<img src="${arrPoke[i].img}" />
-      <h3>${arrPoke[i].name}</h3>
-      <p>${arrPoke[i].type}</p>
-      <button>Add to favs</button>`)
+        div.innerHTML=`<img src='${arrPoke[i].img}'/>
+        <h3>${arrPoke[i].name}</h3>
+        <p>Type: ${arrPoke[i].type}</p>
+        <button id='btnaggfav'>Add to favs</button>`
+        divPoke.appendChild(div)
       }
+      
     })
     .catch(err => console.log(err))
-  }
-  console.log(arrPoke)
-  
-      
+  }  
       
 
