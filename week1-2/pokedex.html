@@ -1,7 +1,6 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="styles/app.css">
     <link rel="stylesheet" href="styles/pokestyles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -23,8 +22,8 @@
                 <h2>Pokedex</h2>
             </div>
             <ul class="header-list">
-                <li><a href="">Home</a></li>
-                <li><a href="#history">History</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="">History</a></li>
                 <li><a href="">Videos</a></li>
                 <li><a href="pokedex.html" target="_blanck">Pokedex</a></li>
                 <li><a href="">My Favs</a></li>
@@ -32,11 +31,11 @@
         </nav>
     </header>
     <h1 id="titulo">Pokemon</h1>
-    <div class="busqueda">
-        <input type="text" name="" id="">
-        <button>Search</button>
+    <div class="busqueda" id="searchBar">
+        <input type="text" name="" id="inputpokemon">
+        <input type="submit" id="searchBtn" onclick="busquedaPokemones()" value="Search">
     </div>
-    <div id='pokemones' class="row" ></div>
+    <div id='pokemones' class="row"></div>
 </body>
 
 </html>

@@ -38,33 +38,46 @@ function stopVideo() {
   player.stopVideo();
 }
 
-const arrPoke= []
+const arrPoke = []
 const url = 'https://pokeapi.co/api/v2/pokemon/'
-for (i =1 ; i <= 150; i++) {
+for (i = 1; i <= 150; i++) {
   fetch(url + i)
     .then(res => res.json())
     .then(data => {
       const arrayPoke = {
         name: data.name,
-        id:data.id,
-        type:data.types[0].type.name,
-        img:data.sprites.front_default
+        id: data.id,
+        type: data.types[0].type.name,
+        img: data.sprites.front_default
       }
       arrPoke.push(arrayPoke)
-      
-      const divPoke=document.getElementById('pokemones')
-      const div = document.createElement('div')
-      div.classList.add("col-md-2")
-      for (i=0; i<=arrPoke.length; i++){
-        div.innerHTML=`<img src='${arrPoke[i].img}'/>
+      muestraPokemones()
+    })
+
+    .catch(err => console.log(err))
+}
+
+function busquedaPokemones() {
+const searchBtn = document.getElementById('searchBtn')
+const inputpokemon = document.getElementById('inputpokemon')
+searchBtn.addEventListener('click', () => {
+  for (i = 0; i <= arrPoke.length; i++) {
+    if (inputpokemon.value === arrPoke[i].name) {
+      muestraPokemones()
+    }
+  }
+})
+}
+
+function muestraPokemones() {
+  const divPoke = document.getElementById('pokemones')
+  const div = document.createElement('div')
+  div.classList.add("col-md-2")
+  for (i = 0; i <= arrPoke.length; i++) {
+    div.innerHTML = `<img src='${arrPoke[i].img}'/>
         <h3>${arrPoke[i].name}</h3>
         <p>Type: ${arrPoke[i].type}</p>
-        <button id='btnaggfav'>Add to favs</button>`
-        divPoke.appendChild(div)
-      }
-      
-    })
-    .catch(err => console.log(err))
-  }  
-      
-
+        <button>Add to favs</button>`
+    divPoke.appendChild(div)
+  }
+}
