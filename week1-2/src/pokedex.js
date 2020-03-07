@@ -20,7 +20,7 @@ for (i = 1; i <= 150; i++) {
 
 function busquedaPokemones() {
   const inputpokemon = document.getElementById('inputpokemon')
-  let b = 0;9
+  let b = 0;
   const res = document.getElementById('pokemones');
   res.innerHTML = '';
   if (inputpokemon.value != "") {

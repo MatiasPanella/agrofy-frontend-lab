@@ -1,0 +1,16 @@
+.contenedor_pokemones{
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+}
+input{
+    width: 30vw;
+    height: 3vh;
+    border-radius: 10px;
+}
+.btn-searchbar{
+    width: 7vw;
+    border-radius: 10px;
+    background: linear-gradient(117deg, rgba(34,193,195,1) 0%, rgba(0,252,255,1) 100%);
+    border:none;
+}

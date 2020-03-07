@@ -1,0 +1,9 @@
+.footer{
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    background:  radial-gradient(circle, rgba(246,246,246,0.8463760504201681) 0%, rgba(255,184,75,1) 100%);
+}
+.footer p{
+    margin: 0 auto;
+}

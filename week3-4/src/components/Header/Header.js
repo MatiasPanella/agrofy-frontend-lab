@@ -7,13 +7,16 @@ const Header = () => {
 
     const getMenuItems = () => <ul>
         <Link to="/"><li>Home</li></Link>
+        <Link to="/"><li>History</li></Link>
+        <Link to="/"><li>Videos</li></Link>
         <Link to="/pokedex"><li>Pokedex</li></Link>
+        <Link to="/myfavs"><li>My Favs</li></Link>
     </ul>;
 
     return <header className="header">
         <div className="header__logo">
           <Link to="/">
-              <img className="header__logo__image" src="/pokeball.png" alt="logo" />
+              <img className="header__logo__image" src="/imgs/pokebola2.svg" alt="logo" />
               <h2>Pokedex</h2>    
           </Link>
         </div>
