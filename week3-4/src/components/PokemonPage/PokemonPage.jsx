@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import './PokemonPage.css'
 import PokeCard from '../PokeCard/PokeCard'
+import SearchBar from '../SearchBar/SearchBar';
 
 const PokemonCard = () => {
     const [pokemon, setPokemon] = useState([]);
+    const [inputValue, setInputValue]=('')
 
+    function handleChange(newValue){
+        setInputValue(newValue);
+    }
     useEffect(async () => {
         await setPokemonFunction()
     }, []);
 
     const setPokemonFunction = async () => {
+        setPokemon([])
         const arrayPokemones = []
         for (let i = 1; i <= 150; i++) {
             const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + i)
@@ -22,8 +28,12 @@ const PokemonCard = () => {
             });
         }
         setPokemon(arrayPokemones)
+        
     }
     return (
+        <div>
+            <SearchBar 
+            value={inputValue} onChange={handleChange}/>
         <div className='pokemones'>
             {pokemon.length > 0 ?
                 pokemon.map(pok => {
@@ -32,13 +42,14 @@ const PokemonCard = () => {
                     name={pok.name}
                     type={pok.type}
                     img={pok.urlImg}
-                    Fav={false}/>
+                    fav={false}/>
                     )
                 }
                 )
                 :
                 <p>Cargando pokemones...</p>
             }
+        </div>
         </div>
     )
 }
