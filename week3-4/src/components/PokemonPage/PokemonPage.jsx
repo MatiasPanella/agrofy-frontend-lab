@@ -31,7 +31,8 @@ const PokemonCard = () => {
                     id={pok.id}
                     name={pok.name}
                     type={pok.type}
-                    img={pok.urlImg}/>
+                    img={pok.urlImg}
+                    Fav={false}/>
                     )
                 }
                 )
