@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react'
 
-const PokeCard = ({ id, name, type, img, favs, pokemones, setPokemones}) => {
+const PokeCard = ({ id, name, type, img, favs}) => {
     const [active, setActive] = useState(true)
     const [styles, setStyles] = useState({
         classes: 'pokemones div noActive',
@@ -44,7 +44,6 @@ const PokeCard = ({ id, name, type, img, favs, pokemones, setPokemones}) => {
             if (!active) {
                 setActive(true)
                 removeLocalStorage();
-               // setPokemones(pokemones.filter(x => x.id != id));
             }
             else {
                 setActive(false)

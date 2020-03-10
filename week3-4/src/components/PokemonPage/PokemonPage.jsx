@@ -5,11 +5,7 @@ import SearchBar from '../SearchBar/SearchBar';
 
 const PokemonCard = () => {
     const [pokemon, setPokemon] = useState([]);
-    const [inputValue, setInputValue]=('')
 
-    function handleChange(newValue){
-        setInputValue(newValue);
-    }
     useEffect(async () => {
         await setPokemonFunction()
     }, []);
@@ -28,12 +24,23 @@ const PokemonCard = () => {
             });
         }
         setPokemon(arrayPokemones)
-        
+       
     }
+    const findPokemon = (namePokemon) =>{
+        console.log(namePokemon.name)
+           console.log(pokemon[2].name)
+           for(let i=0; i<pokemon.length; i++){
+               if(pokemon[i].name.includes(namePokemon)){
+                   console.log('anda')
+               }else{
+                   console.log('no anda')
+               }
+           }
+        }
+    
     return (
         <div>
-            <SearchBar 
-            value={inputValue} onChange={handleChange}/>
+            <SearchBar onSearch={findPokemon}/>
         <div className='pokemones'>
             {pokemon.length > 0 ?
                 pokemon.map(pok => {

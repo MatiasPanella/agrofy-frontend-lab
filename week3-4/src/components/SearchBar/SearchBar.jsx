@@ -2,18 +2,27 @@ import React, {useState} from 'react';
 import './SearchBar.css';
 
 
-const SearchBar=( inputVal,props)=> {
+const SearchBar=({onSearch})=> {
   
-  function handleChange(event) {
-    // Here, we invoke the callback with the new value
-    props.onChange(event.target.value);
-  }
-   
+  const [inputValue, setInputValue] = useState({
+    name:''
+  });
+ 
 
+  const handleEvent = (e) =>{
+   setInputValue({
+     ...inputValue,
+     name : e.target.value
+   })
+  }
+  const searchPokemon=(e)=>{
+    e.preventDefault()
+    onSearch(inputValue)
+  }
       return (
         <div className='searchBar'>
-          <input type='text' value={props.inputVal} placeholder='Insert you pokemon'  onChange={handleChange}/>
-          <button className='btn-searchbar' >Search</button>
+           <input type='text' name='input' placeholder='Insert you pokemon'  onChange={handleEvent}/>
+          <button className='btn-searchbar' onClick={searchPokemon} >Search</button>
         </div>
       )
 }
