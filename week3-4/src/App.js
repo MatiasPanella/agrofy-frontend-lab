@@ -4,9 +4,11 @@ import './styles/App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
+
 const Home = lazy(() => import('./pages/Home/Home'));
 const Pokedex = lazy(() => import('./pages/Pokedex/Pokedex'));
 const MyFavs = lazy(()=> import ('./pages/MyFavs/MyFavs') )
+
 
 const App = () => (
   <React.Fragment>

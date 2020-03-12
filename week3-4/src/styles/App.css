@@ -1,4 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+*{
+  font-family: 'Comfortaa', cursive ;
+}
 .page {
   max-width: 100%;
   margin: auto;
+}
+.my-favs{
+  text-align: center;
+  font-size: 300%;
 }

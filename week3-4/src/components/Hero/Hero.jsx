@@ -7,7 +7,7 @@ const Hero = () => {
             <div className='hero'>
                 <h1>Welcome to Pokedex</h1>
                 <p>Join our comunity to find Pokémon's news.</p>
-                <button className="btn">View more </button>
+                <button className="btn-hero">View more </button>
             </div>
     )
 }

@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     margin-top: 2vh;
+    padding-bottom: 10px;
 }
 input{
     width: 30vw;
@@ -9,8 +10,16 @@ input{
     border-radius: 10px;
 }
 .btn-searchbar{
-    width: 7vw;
+    width: 90px;
     border-radius: 10px;
     background: linear-gradient(117deg, rgba(34,193,195,1) 0%, rgba(0,252,255,1) 100%);
     border:none;
 }
+
+ @media (max-width:768px){
+     input {
+        width: 180px;
+        height: 20px;
+        border-radius: 10px;
+     }
+ }
