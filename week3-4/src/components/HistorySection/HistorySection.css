@@ -1,0 +1,144 @@
+h1{
+    font-size: 50px;
+    padding-top: 5vh;
+    text-align:center;
+}
+#art1 {
+    display: flex;
+    border-left: 6px solid pink;
+    margin-left: 3vw;
+  }
+.logo1{
+    display: flex;
+    align-items: center;
+  }
+  .logo1 img{
+    width: 10vw;
+    height: 10vh;
+  }
+ .logo1 h2{
+    font-size: 40px;
+    color: pink;
+    margin-top: 25px;
+  }
+  .first-steps  {
+        margin: 0 2vw 0 2vw;
+  }
+.first-steps h2{
+    font-size: 40px;
+    color:pink;
+  }
+  .first-steps p{
+    font-size: 20px;
+  
+  }
+  #art2{
+    display: flex;
+    flex-direction: row-reverse;
+    border-right: 6px solid #009bb3;
+    margin-right: 3vw;
+  }
+  .logo2{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  #art2 img{
+    width: 10vw;
+    height: 10vh;
+  }
+#art2 h2{
+    font-size: 40px;
+    color: #009bb3;
+    margin-top: 35px;
+  }
+  .game-boy {
+    margin: 0 3vw 0 3vw
+  }
+  .game-boy p{
+    font-size: 20px;
+  }
+  #art3 {
+    display: flex;
+    border-left: 6px solid 	#ffd764;
+    margin-left: 3vw;
+  }
+.logo3{
+    display: flex;
+    align-items: center;
+  }
+#art3 img{
+    width: 10vw;
+    height: 10vh;
+  }
+.logo3 h2{
+    font-size: 40px;
+    color: #ffd764;
+    margin-top: 25px;
+ }
+.pikachu{
+    margin: 0 2vw 0 2vw;}
+.pikachu h2{
+    font-size: 40px;
+    color:#ffd764;
+}
+.pikachu p{
+    font-size: 20px;
+    margin-left: 3px;
+  }
+  
+  @media (max-width:768px){
+      #historySection{
+          margin:20px 0 20px
+      }
+    #title{
+        background: rgba(255,189,141,1);
+        margin: 0 auto;
+        padding:2vh 0;
+       }
+        #art1{
+         display: block;
+         margin-left: 1vw;
+         padding:0;
+       }
+       .logo1{
+         display: flex;
+         justify-content: center;
+       }
+       .logo1 img{
+        margin: 0;
+        width: 30vw;
+       }
+        .logo1 h2{ 
+        margin: 3vh 0 0 0;
+      }
+      .logo2{
+        margin: 0 auto;
+            }
+        #art2{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-right: 1vw;
+        padding:0;
+      }
+      .logo2 img{
+        margin: 0;
+        width: 40vw;
+       }
+         #art2 .logo2 h2{ 
+        margin: 3vh 0 0 0;
+      }
+      #art3{
+        display: block;
+        margin-left: 1vw;
+        padding:0;
+      }
+      .logo3{
+        display: flex;
+        justify-content: center;
+      }
+      .logo3 img{
+       margin: 0;
+       width: 30vw;
+      }
+  }

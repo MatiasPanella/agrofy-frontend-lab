@@ -1,28 +1,29 @@
 .hero {
   background-image: url("../../imgs/charmander.png");
-  display: flex;
+  text-align: center;
   height: 40vh;
-  flex-direction: column;
-  justify-content: space-between;
-  background-position: 10% 70%;
+  background-position: 10% 90%;
   background-size: 360px;
   background-repeat: no-repeat;
-  margin: 0 0 5vh 0;
+  margin: 0 0 5vh ;
 }
-.hero h1{
-    margin-left: 64vw;
-    font-size: 300%;
-    text-align:center;
+.hero h1 {
+  font-size: 300%;
 }
-.hero p{
-    margin-left: 66vw;
-    font-size: small;
+.hero img {
+  size: 360px;
 }
-.hero .btn{
-    width: 80px;
-    background: linear-gradient(117deg, rgba(34,193,195,1) 0%, rgba(0,252,255,1) 100%);
-    border-radius: 40px;
-    margin-left: 72vw;
-    height: 30px;
-    border: none;
+.hero p {
+  font-size: small;
+}
+.hero .btn {
+  width: 80px;
+  background: linear-gradient(
+    117deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(0, 252, 255, 1) 100%
+  );
+  border-radius: 40px;
+  height: 30px;
+  border: none;
 }

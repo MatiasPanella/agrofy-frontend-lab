@@ -1,5 +1,4 @@
 import React from 'react';
-import SearchBar from '../../components/SearchBar/SearchBar';
 import PokemonPage from '../../components/PokemonPage/PokemonPage';
 const Pokedex = () => (
   <div className="pokedex page">

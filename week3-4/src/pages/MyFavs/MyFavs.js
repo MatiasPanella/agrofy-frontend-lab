@@ -4,13 +4,12 @@ import PokeCard from '../../components/PokeCard/PokeCard'
 const MyFavs = () => {
     const [pokemonInStorage, setPokemonInStorage]=useState([])
     const arrayPokemonLocal = []
-    useEffect(async()=>{
-        await traePokemones()
+    useEffect(()=>{
+         traePokemones();
     },[])
     const  traePokemones =() =>{
         for (let i = 0; i < Object.keys(localStorage).length; i++) {
             const pokemonLocal = localStorage.getItem(Object.keys(localStorage)[i])
-            console.log(JSON.parse(pokemonLocal))
             arrayPokemonLocal.push({
                 name: JSON.parse(pokemonLocal).name,
                 type: JSON.parse(pokemonLocal).type,
@@ -26,7 +25,7 @@ const MyFavs = () => {
         <div className='pokemones'>
              {pokemonInStorage.length > 0 ?
                 pokemonInStorage.map(pok => {
-                   return( <PokeCard
+                   return( <PokeCard key={pok.id}
                     id={pok.id}
                     name={pok.name}
                     type={pok.type}

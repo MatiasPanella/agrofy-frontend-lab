@@ -5,58 +5,67 @@ import SearchBar from '../SearchBar/SearchBar';
 
 const PokemonCard = () => {
     const [pokemon, setPokemon] = useState([]);
+    const [filtred, setFiltred] = useState([]);
 
-    useEffect(async () => {
-        await setPokemonFunction()
+    useEffect(() => {
+        setPokemonFunction();
     }, []);
 
-    const setPokemonFunction = async () => {
-        setPokemon([])
-        const arrayPokemones = []
+    const setPokemonFunction = () => {
+        const promises = [];
+
         for (let i = 1; i <= 150; i++) {
-            const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + i)
-            const res = await response.json()
-            arrayPokemones.push({
-                name: res.name,
-                id: res.id,
-                type: res.types[0].type.name,
-                urlImg: res.sprites.front_default
-            });
+            promises.push(fetch('https://pokeapi.co/api/v2/pokemon/' + i)
+                .then(resp => {
+                    return resp.json()
+                }))
         }
-        setPokemon(arrayPokemones)
-       
+            Promise.all(promises)
+                .then(poke => {
+                    const inter = poke.map(res => {
+                        return {
+                            name: res.name,
+                            id: res.id,
+                            type: res.types[0].type.name,
+                            urlImg: res.sprites.front_default
+                        }
+                    });
+                    setPokemon(inter)
+
+                })
+            }
+
+    const searchPokemon = () =>{
+        
     }
-    const findPokemon = (namePokemon) =>{
-        console.log(namePokemon.name)
-           console.log(pokemon[2].name)
-           for(let i=0; i<pokemon.length; i++){
-               if(pokemon[i].name.includes(namePokemon)){
-                   console.log('anda')
-               }else{
-                   console.log('no anda')
-               }
-           }
+    const findPokemon = (namePokemon) => {
+        const arrayPokeFiltered = pokemon.filter(poke => {
+            return poke.name.toLowerCase().includes(namePokemon.name);
+        })
+        setFiltred(arrayPokeFiltered);
+        searchPokemon()
         }
-    
+
+
     return (
         <div>
-            <SearchBar onSearch={findPokemon}/>
-        <div className='pokemones'>
-            {pokemon.length > 0 ?
-                pokemon.map(pok => {
-                    return (<PokeCard
-                    id={pok.id}
-                    name={pok.name}
-                    type={pok.type}
-                    img={pok.urlImg}
-                    fav={false}/>
+            <SearchBar onSearch={findPokemon} />
+            <div className='pokemones'>
+                {pokemon.length > 0 ?
+                    pokemon.map(pok => {
+                        return (<PokeCard key={pok.id}
+                            id={pok.id}
+                            name={pok.name}
+                            type={pok.type}
+                            img={pok.urlImg}
+                            fav={false} />
+                        )
+                    }
                     )
+                    :
+                    <p>Cargando pokemones...</p>
                 }
-                )
-                :
-                <p>Cargando pokemones...</p>
-            }
-        </div>
+            </div>
         </div>
     )
 }
