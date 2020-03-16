@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react'
 
-const PokeCard = ({ id, name, type, img, favs}) => {
+const PokeCard = ({ id, name, type, img, fav, pokemonInStorage, setPokemonInStorage}) => {
     const [active, setActive] = useState(true)
     const [styles, setStyles] = useState({
         classes: 'pokemones div noActive',
@@ -17,14 +17,14 @@ const PokeCard = ({ id, name, type, img, favs}) => {
     function addInLocalStorage(pokemonObj) {
         localStorage.setItem(id, JSON.stringify(pokemonObj))
     }
-    function changeClass() {
+    const changeClass=() =>{
         const objPokemon = {
             name: name,
             id: id,
             type: type,
             image: img
         }
-        if (!favs) {
+        if (!fav) {
             if (!active) {
                 setActive(true)
                 removeLocalStorage()
@@ -44,6 +44,8 @@ const PokeCard = ({ id, name, type, img, favs}) => {
             if (!active) {
                 setActive(true)
                 removeLocalStorage();
+                setPokemonInStorage(pokemonInStorage.filter(x => x.id != id))
+
             }
             else {
                 setActive(false)
@@ -59,7 +61,7 @@ const PokeCard = ({ id, name, type, img, favs}) => {
             <img src={img} alt="" />
             <h3>{name}</h3>
             <p>Type: {type}</p>
-            <button id={id} className={styles.classes} onClick={() => changeClass()}>{styles.buttonText}</button>
+            <button id={id} className={styles.classes} onClick={ () => changeClass()}>{styles.buttonText}</button>
         </div>
     )
 }

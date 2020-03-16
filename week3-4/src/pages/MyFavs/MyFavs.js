@@ -32,7 +32,10 @@ const MyFavs = () => {
                             name={pok.name}
                             type={pok.type}
                             img={pok.imgLocal}
-                            fav={false} />
+                            fav={true}
+                            pokemonInStorage={pokemonInStorage}
+                            setPokemonInStorage={setPokemonInStorage} 
+                            />
                         )
                     }
                     )

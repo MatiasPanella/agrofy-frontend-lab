@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer';
 const Home = lazy(() => import('./pages/Home/Home'));
 const Pokedex = lazy(() => import('./pages/Pokedex/Pokedex'));
 const MyFavs = lazy(()=> import ('./pages/MyFavs/MyFavs') )
+const Login = lazy (()=> import ('./pages/Login/Login'))
 
 
 const App = () => (
@@ -19,6 +20,7 @@ const App = () => (
         <Route exact path="/" component={Home}/>
         <Route exact path="/pokedex" component={Pokedex}/>
         <Route exact path="/myfavs" component={MyFavs}/>
+        <Route exact path="/login" component={Login}/>
       </Switch>
     </Suspense>
     <Footer />
